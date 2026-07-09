@@ -1,7 +1,0 @@
-*.class
-target/
-build/
-out/
-.vscode/
-.idea/
-*.iml
