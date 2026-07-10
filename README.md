@@ -1,6 +1,7 @@
 # Gardening Project
 
 ## About this repo
+I've even generated this readme with claude. This whole project is just me learning how to use claudecode and what is and isn't a good idea when using it. So far leared that using high confidense modles probbaly aren't worth the token cost.
 
 This project is an exercise in **vibecoding** — building an application almost entirely through conversation with an AI coding assistant rather than hand-writing it. It's also my first time using Claude Code. I want to see how far I can get building the application below purely from the information I've given it, consulting me on the genuinely ambiguous decisions along the way rather than guessing.
 
