@@ -1,26 +1,32 @@
 """Entry point for the Gardening Project application."""
 import pygame
 
-WINDOW_SIZE = (800, 600)
-BACKGROUND_COLOR = (135, 206, 235)  # sky blue placeholder
-FPS = 60
+from app import theme
+from app.scene import SceneManager
+from app.scenes.menu_scene import MenuScene
 
 
 def main():
     pygame.init()
-    screen = pygame.display.set_mode(WINDOW_SIZE)
+    screen = pygame.display.set_mode(theme.WINDOW_SIZE)
     pygame.display.set_caption("Gardening Project")
     clock = pygame.time.Clock()
 
+    manager = SceneManager()
+    manager.switch_to(MenuScene(manager))
+
     running = True
     while running:
+        dt = clock.tick(theme.FPS) / 1000.0
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 running = False
+            else:
+                manager.handle_event(event)
 
-        screen.fill(BACKGROUND_COLOR)
+        manager.update(dt)
+        manager.draw(screen)
         pygame.display.flip()
-        clock.tick(FPS)
 
     pygame.quit()
 

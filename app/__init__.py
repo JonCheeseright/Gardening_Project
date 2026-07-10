@@ -1,0 +1,1 @@
+"""Gardening Project application package."""
